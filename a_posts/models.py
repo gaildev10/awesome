@@ -2,12 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 import uuid
 
+
+
+
 class Post(models.Model):
     title = models.CharField(max_length=500)
     artist = models.CharField(max_length=500, null=True)
     url = models.URLField(max_length=500, null=True)
     # image = models.URLField(max_length=500)
-    image = models.ImageField(upload_to='images/', max_length=500)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='posts')
     body = models.TextField()
     likes = models.ManyToManyField(User, related_name="likedposts", through="LikedPost")
@@ -20,6 +23,7 @@ class Post(models.Model):
     
     class Meta:
         ordering = ['-created']
+
 
 class LikedPost(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

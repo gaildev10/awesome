@@ -20,6 +20,7 @@ class PostCreateForm(forms.ModelForm):
         }
 
 
+
 class PostEditForm(forms.ModelForm):
     class Meta:
         model = Post
