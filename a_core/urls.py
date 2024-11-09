@@ -21,6 +21,7 @@ from a_users.views import *
 from django.conf import settings
 from a_users.views import profile_view
 from django.conf.urls.static import static 
+from videos import views as video_views
 
 urlpatterns = [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
@@ -45,6 +46,7 @@ urlpatterns = [
     path('comment/delete/<pk>/', comment_delete_view, name='comment-delete'),
     path('reply-sent/<pk>/', reply_sent, name='reply-sent'),
     path('reply/delete/<pk>/', reply_delete_view, name='reply-delete'),
+    path('templates/video/', video_views.index, name='index' ),
 
 ]
 
