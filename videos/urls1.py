@@ -16,14 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import CreateVideo, DetailVideo
-
+from django.conf import settings
+from django.conf.urls.static import static 
+from videos import views as video_views
 
 urlpatterns = [
     
-    path('create/', CreateVideo.as_view(), name='video-create'),
-    path('<int:pk>/', DetailVideo.as_view(), name='video-detail'),
-    # path('<int:pk>/update', UpdateVideo.as_view(), name='video-update'),
-    # path('<int:pk>/delete', DeleteVideo.as_view(), name='video-delete'),
+    path('templates/video/', video_views.index, name='index' ),
 
-] 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

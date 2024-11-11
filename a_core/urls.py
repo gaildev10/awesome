@@ -47,6 +47,7 @@ urlpatterns = [
     path('reply-sent/<pk>/', reply_sent, name='reply-sent'),
     path('reply/delete/<pk>/', reply_delete_view, name='reply-delete'),
     path('templates/video/', video_views.index, name='index' ),
+    path('videos/', include('videos.urls')),
 
 ]
 
