@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'a_inbox',
     'videos',
     # 'crispy_forms',
+    # 'crispy_bootstrap4',
 ]
 
 SITE_ID = 1 
@@ -177,6 +178,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
