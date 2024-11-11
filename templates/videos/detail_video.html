@@ -53,6 +53,9 @@
 
 			</div>
 		</div>
+
+        <a href="{% url 'video-update' object.pk %}"><ion-icon name='pencil-outline'></ion-icon></a>
+        <a href="{% url 'video-delete' object.pk %}"><ion-icon name='close-outline'></ion-icon></a>
 	</div>
 
 {% endblock content %}

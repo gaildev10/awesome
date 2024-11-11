@@ -46,7 +46,7 @@ urlpatterns = [
     path('comment/delete/<pk>/', comment_delete_view, name='comment-delete'),
     path('reply-sent/<pk>/', reply_sent, name='reply-sent'),
     path('reply/delete/<pk>/', reply_delete_view, name='reply-delete'),
-    path('templates/video/', video_views.index, name='index' ),
+    path('templates/video/', video_views.Index.as_view(), name='index' ),
     path('videos/', include('videos.urls')),
 
 ]
