@@ -4,7 +4,7 @@
     max-height: 100vh;
 }
 
-.toggle-nav-sidebar {
+.toggle--sidebar {
     z-index: 20;
     left: 0;
     display: flex;

@@ -1,16 +1,18 @@
 {% extends 'videos/base.html' %}
 
+{% load static %}
 
 
 {% block content %}
 
-
-
 	<div class="container">
-        
-        <h1 class="row mt-5">Videos</h1>
-		<div class="row mt-5">
+   
+        <center><h1 class="mt-5" >Wedding Videos</h1></center>
+    
+       
+		<center><div class="mt-5">
 			<div class="col-md-8 col-sm-12 col-xs-12">
+                
 				<video-js
 					width="720"
 					height="405"
@@ -21,15 +23,20 @@
 					To view this video please enable Javascript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
 					</p>
 				</video-js>
-				<h5 class="mt-4">{{ object.title }}</h5>
-				<div class="row">
+            </center>
+                
+				<center><h5 class="mt-4">{{ object.title }}</h5></center>
+				<div>
+                    <center>
 					<div class="col-md-6 text-muted">
 						<p>{{ object.date_posted | date:"M d, Y" }}</p>
 					</div>
-					<div class="col-md-6 text-muted text-right">
+                    </center>
+					<center><div class="col-md-6 text-muted text-right">
 						<ion-icon class="video-icons" name="share-social-outline" type="button"  data-toggle="modal" data-target="#exampleModal">
                         
                     </ion-icon>
+                
                     
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,12 +57,17 @@
                         </div>
                         </div>
                     </div>
-
+                
 			</div>
 		</div>
-
+    </center>
+    
+    <center>
+  
         <a href="{% url 'video-update' object.pk %}"><ion-icon name='pencil-outline'></ion-icon></a>
         <a href="{% url 'video-delete' object.pk %}"><ion-icon name='close-outline'></ion-icon></a>
 	</div>
+    </center>
+
 
 {% endblock content %}
